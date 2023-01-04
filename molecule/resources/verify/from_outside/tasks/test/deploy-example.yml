@@ -34,7 +34,7 @@
 
     - name: Assert that the nginx welcome page is available
       ansible.builtin.uri:
-        url: http://{{ ip | ansible.utils.ipwrap }}:{{ port }}/
+        url: http://{{ ip }}:{{ port }}/
         return_content: yes
       register: result
       failed_when: "'Welcome to nginx!' not in result.content"
